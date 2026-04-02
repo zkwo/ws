@@ -1,53 +1,40 @@
-const AdminPanel = () => {
+import { useState } from 'react';
+
+export default function AdminPanel() {
+  const [stats] = useState([
+    { label: 'Total Sales', val: 'IDR 1.2M' },
+    { label: 'Orders', val: '42' },
+    { label: 'Members', val: '15' }
+  ]);
+
   return (
-    <div className="min-h-screen bg-[#050505] p-6 text-white">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-[#050505] p-6 text-white font-sans">
+      <div className="max-w-lg mx-auto">
         <header className="flex justify-between items-center mb-10">
-          <h1 className="text-2xl font-bold">Valtus Dashboard</h1>
-          <button className="text-red-400 text-sm font-bold">Logout</button>
+          <h1 className="text-xl font-bold italic tracking-tighter">V <span className="not-italic text-sm ml-2 opacity-50 font-medium">ADMIN</span></h1>
+          <a href="/" className="text-[10px] bg-white/5 px-3 py-1 rounded-full border border-white/10">Logout</a>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="glass-card p-6 rounded-xl">
-            <p className="text-gray-500 text-xs uppercase mb-1">Total Sales</p>
-            <h3 className="text-2xl font-bold">IDR 2.450.000</h3>
-          </div>
-          <div className="glass-card p-6 rounded-xl">
-            <p className="text-gray-500 text-xs uppercase mb-1">Pending Orders</p>
-            <h3 className="text-2xl font-bold">12</h3>
-          </div>
-          <div className="glass-card p-6 rounded-xl">
-            <p className="text-gray-500 text-xs uppercase mb-1">Total Members</p>
-            <h3 className="text-2xl font-bold">142</h3>
-          </div>
+        <div className="grid grid-cols-3 gap-3 mb-8">
+          {stats.map((s, i) => (
+            <div key={i} className="glass-card p-4 rounded-xl text-center">
+              <p className="text-[8px] uppercase opacity-40 mb-1">{s.label}</p>
+              <p className="text-sm font-bold">{s.val}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="glass-card rounded-2xl overflow-hidden">
-          <table className="w-full text-left text-sm">
-            <thead className="bg-white/5 text-gray-400">
-              <tr>
-                <th className="p-4">User</th>
-                <th className="p-4">Item</th>
-                <th className="p-4">Status</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-white/5">
-              <tr>
-                <td className="p-4 font-medium">siZhens_Dev</td>
-                <td className="p-4 text-gray-400">1000 Robux (Group)</td>
-                <td className="p-4"><span className="text-green-400 bg-green-400/10 px-2 py-1 rounded text-[10px]">Success</span></td>
-              </tr>
-              <tr>
-                <td className="p-4 font-medium">Player_One</td>
-                <td className="p-4 text-gray-400">500 Robux (Gamepass)</td>
-                <td className="p-4"><span className="text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded text-[10px]">Pending</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <h3 className="text-xs font-bold mb-4 opacity-70">Pesanan Terbaru</h3>
+        <div className="space-y-3">
+          <div className="glass-card p-4 rounded-xl flex justify-between items-center">
+            <div>
+              <p className="text-xs font-bold">siZhens_Dev</p>
+              <p className="text-[10px] opacity-40">1000 Robux (Gamepass)</p>
+            </div>
+            <span className="text-[9px] bg-green-500/20 text-green-400 px-2 py-1 rounded">Selesai</span>
+          </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default AdminPanel;
+}
