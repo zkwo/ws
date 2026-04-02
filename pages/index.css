@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-500 font-['Plus_Jakarta_Sans'];
+  }
+}
+
+.glass-card {
+  @apply backdrop-blur-md border border-white/10 relative overflow-hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.glass-card::after {
+  content: "";
+  @apply absolute -top-1/2 -left-[150%] w-[200%] h-[200%] rotate-[45deg] transition-all duration-700;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+}
+
+.glass-card:hover::after {
+  @apply left-[150%];
+}
