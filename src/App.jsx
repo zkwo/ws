@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
-import Register from '.Register';
+import Register from './Register';
 import AdminPanel from './AdminPanel';
 import MemberDashboard from './MemberDashboard';
 
