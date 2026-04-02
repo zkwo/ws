@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import FaqItem from '../components/FaqItem';
+import FaqItem from '../components/Faqltem';
 
 export default function Home({ isDarkMode, setIsDarkMode }) {
   return (
