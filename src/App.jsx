@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import AdminPanel from './pages/AdminPanel';
+import Home from './src/Home';
+import Login from './src/Login';
+import Register from './src/Register';
+import AdminPanel from './src/AdminPanel';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
