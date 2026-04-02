@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply transition-colors duration-500 font-['Plus_Jakarta_Sans'];
-  }
+/* Tambahan untuk efek halus di mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply transition-colors duration-500;
 }
 
 .glass-card {
